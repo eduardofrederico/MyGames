@@ -301,7 +301,7 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="addEditCover:" destination="5Te-yl-QX5" eventType="touchUpInside" id="Pro-bv-cdf"/>
+                                    <action selector="addEditGame:" destination="5Te-yl-QX5" eventType="touchUpInside" id="3gD-vV-XlU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odC-vi-H6l">
@@ -310,6 +310,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Toque para adicionar a imagem de capa">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="addEditCover:" destination="5Te-yl-QX5" eventType="touchUpInside" id="Boj-gp-UMe"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vIC-4P-JMz"/>
