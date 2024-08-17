@@ -30,6 +30,7 @@ class AddEditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tfConsole.inputView = pickerView
         
         if game != nil {
             title = "Editar Jogo"
@@ -139,14 +140,16 @@ class AddEditViewController: UIViewController {
 
 
 extension AddEditViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return consolesManager.consoles.count
-    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    private func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> String? {
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return consolesManager.consoles.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let console = consolesManager.consoles[row]
         return console.name
     }
