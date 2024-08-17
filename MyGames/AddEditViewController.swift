@@ -56,7 +56,7 @@ class AddEditViewController: UIViewController {
         
         let btCancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
         let btDone = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
-        let btFlexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        _ = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         
         toolbar.items = [btCancel, btDone]
         
