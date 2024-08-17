@@ -31,12 +31,33 @@ class AddEditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if game != nil {
+            title = "Editar Jogo"
+            btAddEdit.setTitle("ALTERAR", for: .normal)
+            tfTitle.text = game.title
+            if let console = game.console, let index = consolesManager.consoles.firstIndex(of: console) {
+                tfConsole.text = console.name
+                pickerView.selectRow(index, inComponent: 0, animated: false)
+            }
+            ivCover.image = game.cover as? UIImage
+            if let releaseDate = game.releaseDate {
+                dpReleaseDate.date = releaseDate
+            }
+            if game.cover != nil {
+                btCover.setTitle(nil, for: .normal)
+            }
+        }
+        prepareConsoleTextField()
+    }
+    
+    func prepareConsoleTextField() {
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 44))
         toolbar.tintColor = UIColor(named: "main")
         
         let btCancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
         let btDone = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
         let btFlexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
         toolbar.items = [btCancel, btDone]
         
         tfConsole.inputView = pickerView

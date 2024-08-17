@@ -27,7 +27,7 @@ class ConsolesTableViewController: UITableViewController {
     
     func showAlert(with console: Console?) {
         let title = console == nil ? "Adicionar" : "Editar"
-        let alert = UIAlertController(title: title + "plataforma", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: title + " plataforma", message: nil, preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.placeholder = "Nome da Plataforma"
             if let name = console?.name {
